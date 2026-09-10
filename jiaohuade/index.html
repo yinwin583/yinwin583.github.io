@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狡猾的风水相师-风水玄学知识分享与相师行业揭秘指南</title>
+    <meta name="description" content="狡猾的风水相师专题站，深度解析风水相师行业生态、常见话术与骗局识别，分享实用风水基础、相术常识及择吉避凶的理性指南。">
+    <meta name="keywords" content="狡猾的风水相师,风水相师,风水骗局,相术揭秘,风水基础知识,择日,命理咨询,玄学防骗">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+            background: #f5f2ec;
+            color: #2d2a26;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* header */
+        .site-header {
+            background: #1f2a24;
+            border-bottom: 3px solid #c2a878;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            font-size: 28px;
+            background: #c2a878;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1f2a24;
+            font-weight: bold;
+        }
+        .logo-text {
+            color: #f0e9dd;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        .logo-text span {
+            color: #c2a878;
+            font-weight: normal;
+            font-size: 16px;
+            margin-left: 6px;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 26px;
+        }
+        .main-nav a {
+            color: #d8d2c5;
+            font-size: 16px;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .main-nav a:hover {
+            color: #ffffff;
+            border-bottom-color: #c2a878;
+        }
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: 1px solid #c2a878;
+            color: #c2a878;
+            font-size: 22px;
+            padding: 2px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* hero 首屏 */
+        .hero {
+            background: linear-gradient(135deg, #1f2a24 0%, #2e3d34 100%);
+            color: #f0e9dd;
+            padding: 70px 0;
+            text-align: center;
+            border-bottom: 5px solid #c2a878;
+        }
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+        .hero .sub {
+            font-size: 20px;
+            color: #cbbfa8;
+            max-width: 700px;
+            margin: 0 auto 24px;
+            letter-spacing: 1px;
+        }
+        .hero .hero-desc {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 16px;
+            color: #b8b0a0;
+        }
+        .btn-group {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.25s;
+            border: 2px solid transparent;
+        }
+        .btn-primary {
+            background: #c2a878;
+            color: #1f2a24;
+        }
+        .btn-primary:hover {
+            background: #d4bd91;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            border-color: #c2a878;
+            color: #c2a878;
+        }
+        .btn-outline:hover {
+            background: rgba(194,168,120,0.15);
+            transform: translateY(-2px);
+        }
+
+        /* 快速指引 */
+        .quick-info {
+            background: #fff;
+            padding: 25px 0;
+            border-bottom: 1px solid #e5ddd0;
+        }
+        .quick-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .quick-item {
+            flex: 1;
+            min-width: 180px;
+            text-align: center;
+            padding: 10px 5px;
+        }
+        .quick-item .num {
+            font-size: 32px;
+            color: #8a6d4b;
+            font-weight: bold;
+        }
+        .quick-item .label {
+            color: #6b5e4e;
+            font-size: 14px;
+        }
+
+        /* 常规栏目 */
+        .section {
+            padding: 60px 0;
+        }
+        .section-alt {
+            background: #eae4da;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #1f2a24;
+            margin-bottom: 10px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #c2a878;
+            border-radius: 2px;
+        }
+        .section-sub {
+            text-align: center;
+            color: #6b5e4e;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        /* 卡片 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 4px solid transparent;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-top-color: #c2a878;
+        }
+        .card .icon {
+            font-size: 32px;
+            margin-bottom: 14px;
+        }
+        .card h3 {
+            font-size: 20px;
+            color: #1f2a24;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #5d554a;
+            font-size: 15px;
+            margin-bottom: 14px;
+        }
+        .card .more {
+            color: #8a6d4b;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* 双列布局 */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .panel {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .panel h3 {
+            font-size: 22px;
+            color: #1f2a24;
+            border-left: 4px solid #c2a878;
+            padding-left: 14px;
+            margin-bottom: 20px;
+        }
+        .list-timeline li {
+            padding: 12px 0;
+            border-bottom: 1px dashed #ddd6ca;
+            display: flex;
+            gap: 12px;
+        }
+        .list-timeline li:last-child {
+            border-bottom: none;
+        }
+        .list-timeline .badge {
+            background: #1f2a24;
+            color: #c2a878;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 20px;
+            height: fit-content;
+            white-space: nowrap;
+        }
+        .list-timeline a {
+            font-weight: 500;
+            color: #2d2a26;
+        }
+        .list-timeline a:hover {
+            color: #8a6d4b;
+        }
+        .list-timeline .date {
+            color: #9a8f7e;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        /* 警示与提醒 */
+        .alert-box {
+            background: #fbf7ed;
+            border-left: 5px solid #b07d3e;
+            padding: 24px 28px;
+            border-radius: 0 10px 10px 0;
+            margin: 30px 0;
+        }
+        .alert-box h3 {
+            color: #7a5a2a;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        .alert-box ul {
+            padding-left: 20px;
+            list-style: disc;
+            color: #4a4034;
+        }
+        .alert-box li {
+            margin-bottom: 8px;
+        }
+
+        /* 案例 */
+        .case-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .case-item {
+            background: #faf7f1;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #e5ddd0;
+        }
+        .case-item .case-title {
+            font-weight: 700;
+            color: #1f2a24;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .case-item .tag {
+            background: #c2a878;
+            color: #1f2a24;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .case-item p {
+            font-size: 15px;
+            color: #5d554a;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .faq-item details {
+            cursor: pointer;
+        }
+        .faq-item summary {
+            font-weight: 600;
+            font-size: 18px;
+            color: #1f2a24;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 24px;
+            color: #8a6d4b;
+            font-weight: 300;
+        }
+        .faq-item details[open] summary::after {
+            content: "–";
+        }
+        .faq-item .faq-body {
+            padding-top: 14px;
+            color: #5d554a;
+            border-top: 1px dashed #ddd6ca;
+            margin-top: 14px;
+        }
+
+        /* footer */
+        .site-footer {
+            background: #1f2a24;
+            color: #b8b0a0;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-grid h4 {
+            color: #e8dfd0;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        .footer-grid ul li {
+            padding: 4px 0;
+            font-size: 14px;
+        }
+        .footer-grid a:hover {
+            color: #c2a878;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #3a4a42;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #7f8b83;
+        }
+
+        /* 响应式 */
+        @media (max-width: 992px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 10px 0;
+            }
+            .main-nav {
+                display: none;
+                width: 100%;
+                margin-top: 10px;
+            }
+            .main-nav ul {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .main-nav.open {
+                display: block;
+            }
+            .hero {
+                padding: 50px 0;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero .sub {
+                font-size: 17px;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .quick-grid {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 20px;
+            }
+            .hero h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">玄</div>
+                <div class="logo-text">狡猾的风水相师<span>· 理性看玄学</span></div>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="打开菜单">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#basics">风水基础</a></li>
+                    <li><a href="#insight">行业揭秘</a></li>
+                    <li><a href="#cases">案例分析</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首屏 hero -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>狡猾的风水相师</h1>
+                <p class="sub">行走江湖，谋利有道？还是故弄玄虚？</p>
+                <p class="hero-desc">我们深度剖析风水相师行业的真实生态，从话术套路到合理参考，让你在传统玄学与现代理性之间找到清醒立足点。不迷信，不盲从，看懂门道。</p>
+                <div class="btn-group">
+                    <a href="#basics" class="btn btn-primary">了解风水基础</a>
+                    <a href="#insight" class="btn btn-outline">识别相师话术</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 快速数据 -->
+        <div class="quick-info">
+            <div class="container quick-grid">
+                <div class="quick-item">
+                    <div class="num">8</div>
+                    <div class="label">常见风水门派</div>
+                </div>
+                <div class="quick-item">
+                    <div class="num">15+</div>
+                    <div class="label">典型话术模式</div>
+                </div>
+                <div class="quick-item">
+                    <div class="num">5</div>
+                    <div class="label">基础避坑原则</div>
+                </div>
+                <div class="quick-item">
+                    <div class="num">3</div>
+                    <div class="label">核心理性准则</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 风水基础 -->
+        <section class="section" id="basics">
+            <div class="container">
+                <h2 class="section-title">风水相术 · 基础正解</h2>
+                <p class="section-sub">从源头理解，才不会被“狡猾的相师”牵着走</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="icon">🏠</div>
+                        <h3>风水不是迷信符号</h3>
+                        <p>传统风水注重居住环境的采光、通风、动线等，有一定经验科学成分。而狡猾的相师常将简单环境建议包装成玄之又玄的“改运秘法”。</p>
+                        <span class="more">了解环境逻辑 →</span>
+                    </div>
+                    <div class="card">
+                        <div class="icon">🔮</div>
+                        <h3>相术与心理暗示</h3>
+                        <p>面相、手相往往利用“巴纳姆效应”——说一些普遍适用的性格描述，让你觉得准确无比。狡猾的相师深谙此道，并借此建立权威感。</p>
+                        <span class="more">识别模糊话术 →</span>
+                    </div>
+                    <div class="card">
+                        <div class="icon">📜</div>
+                        <h3>择日与黄历</h3>
+                        <p>择吉避凶是民俗传统，但真正的风水师会告诉你历法选择只是参考，谋事在人。狡猾者却将普通日子说得凶险万分，迫使你花钱“化解”。</p>
+                        <span class="more">理性看待择日 →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 行业揭秘 + 警示 -->
+        <section class="section section-alt" id="insight">
+            <div class="container">
+                <h2 class="section-title">“狡猾”在哪里？ —— 相师常见套路</h2>
+                <p class="section-sub">了解这些手法，是保护自己钱包的第一步</p>
+                
+                <div class="alert-box">
+                    <h3>⚠️ 警惕这些相师常用“钩子”</h3>
+                    <ul>
+                        <li><strong>恐吓式开场：</strong> “你最近有血光之灾”“你家宅气场紊乱”——先制造焦虑，再推销法器或法事。</li>
+                        <li><strong>模糊预言：</strong> “你命里有一道坎，但过了就好” —— 这类话怎么解释都通，事后还能圆场。</li>
+                        <li><strong>连环收费：</strong> 先看相低价，再推荐开运物、改命局，层层加码，没有尽头。</li>
+                        <li><strong>夸大身份：</strong> 自称某派传人、某某大师高徒，但细查并无依据，也无从考证。</li>
+                    </ul>
+                </div>
+
+                <div class="two-col" style="margin-top:30px;">
+                    <div class="panel">
+                        <h3>真实相师 vs 狡猾相师</h3>
+                        <ul class="list-timeline">
+                            <li>
+                                <span class="badge">靠谱</span>
+                                <span>主动告知命理仅供参考，不恐吓、不强制消费，允许你理性选择。</span>
+                            </li>
+                            <li>
+                                <span class="badge" style="background:#8a6d4b; color:#fff;">狡猾</span>
+                                <span>强调“不信则灾”，把一切问题都指向必须购买特定服务。</span>
+                            </li>
+                            <li>
+                                <span class="badge">靠谱</span>
+                                <span>解答你的疑问，而不是故弄玄虚、让你更加困惑。</span>
+                            </li>
+                            <li>
+                                <span class="badge" style="background:#8a6d4b; color:#fff;">狡猾</span>
+                                <span>用“天机不可泄露”等话术回避关键问题，却暗示付费后能获知。</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h3>相师行业观察</h3>
+                        <p style="margin-bottom:16px;">风水相师作为传统行业的一份子，本身并不都是骗局。但确实存在一些“狡猾”从业者，利用人们对未知的敬畏和信息差来牟利。</p>
+                        <p style="margin-bottom:16px;">一个真正研究风水的人，往往更强调人与环境的和谐，而非单纯贩卖奇迹。如果你遇到一个满口“必发大财”“绝对化解”的相师，请多留一份心。</p>
+                        <p><strong>核心原则：</strong> 任何劝你大额消费的“改运”，都值得你用更长时间去验证其合理性。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 案例剖析 -->
+        <section class="section" id="cases">
+            <div class="container">
+                <h2 class="section-title">典型情境 · 见招拆招</h2>
+                <p class="section-sub">用常见场景帮你建立“防火墙”</p>
+                <div class="case-list">
+                    <div class="case-item">
+                        <div class="case-title"><span class="tag">案例一</span> 办公室“风水阵”推销</div>
+                        <p>某“大师”到公司看风水，说老板座位背后无靠，必须请一尊特定材质貔貅，售价一万八。实际上，老板座位后是一面实体墙，只是大师说“气场不对”。—— 拆解：先核实客观环境，再考虑是否需要调整，而不是一上来就买高价物品。</p>
+                    </div>
+                    <div class="case-item">
+                        <div class="case-title"><span class="tag">案例二</span> 线上“免费算命”陷阱</div>
+                        <p>加微信后免费看手相，结果对方发来一段语音，说“你命带孤辰，婚姻难成，需要请一道符”。免费是诱饵，后续才是重点。拆解：真正的咨询服务会明码标价，而不是用恐吓逼单。</p>
+                    </div>
+                    <div class="case-item">
+                        <div class="case-title"><span class="tag">案例三</span> 风水改命“连环套”</div>
+                        <p>先收500元看八字，然后说“你今年有破财之象，但可以布一个财局”，布局需8000元，布完又说需要每月供奉香火3000元。拆解：任何持续性的隐性花费都要警惕，提前问清总费用。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 理性指南 -->
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">与风水相处 · 理性实践指南</h2>
+                <p class="section-sub">不盲从，也不全盘否定</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="icon">🧭</div>
+                        <h3>把风水当环境学</h3>
+                        <p>关注居家采光、通风、收纳、动线。这些实实在在影响心情与效率，比任何符咒都可靠。改善居住体验，就是最好的“改运”。</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">🧠</div>
+                        <h3>保持心理边界</h3>
+                        <p>如果咨询让你更焦虑，请立刻停止。好的建议应当让你更安定，而不是更惶恐。花钱买心安，但不要花到伤筋动骨。</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">📚</div>
+                        <h3>读点经典与历史</h3>
+                        <p>了解《葬书》《阳宅十书》等古籍，你会发现古人更关注“藏风聚气”背后的地理逻辑，而非迷信恐吓。知识是破解狡猾话术的最好武器。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container">
+                <h2 class="section-title">关于风水相师 · 常见疑问</h2>
+                <p class="section-sub">你搜过的那些问题，这里给些清醒参考</p>
+                <div class="faq-item">
+                    <details>
+                        <summary>如何判断一个风水相师是否靠谱？</summary>
+                        <div class="faq-body">
+                            看三点：一是是否用恐吓逼单；二是是否主动告知命理仅供参考；三是是否愿意解释原理，而不是只说“天机”。另外，查一下他的背景和口碑，但注意很多“口碑”可能是刷出来的。
+                        </div>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>风水真的能改变命运吗？</summary>
+                        <div class="faq-body">
+                            从理性角度看，风水调整若改善了你的居住和工作环境，间接影响心情状态，可能带来积极变化。但指望摆个阵就发财、消灾，属于不切实际的期待。命运更多由个人努力与选择决定。
+                        </div>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>为什么有些相师说得特别准？</summary>
+                        <div class="faq-body">
+                            这背后是“冷读术”和“巴纳姆效应”。他们说的话适用于大多数人，比如“你外表坚强但内心有时脆弱”“你最近有些纠结的选择”，这类话放在谁身上都像那么回事。真正的预测，应当具体、可验证、有时间节点。
+                        </div>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>花钱请人看风水，有没有必要？</summary>
+                        <div class="faq-body">
+                            如果你只是对传统文化好奇，可以花小钱体验。但如果对方报价高昂且让你必须立刻决定，建议缓一缓。很多环境问题可以自学基础，或者找懂建筑、设计的朋友聊聊，成本更低。
+                        </div>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>如何礼貌拒绝一个狡猾的相师？</summary>
+                        <div class="faq-body">
+                            直接说“我暂时不需要，谢谢”，不必解释太多。如果对方纠缠，可以表示“我要和家人商量一下”。真正的大师不会强迫你，只有套路才会步步紧逼。
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>关于本站</h4>
+                    <ul>
+                        <li><a href="#">本站立场</a></li>
+                        <li><a href="#">理性玄学倡议</a></li>
+                        <li><a href="#">投稿与合作</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>快速栏目</h4>
+                    <ul>
+                        <li><a href="#basics">风水基础</a></li>
+                        <li><a href="#insight">行业揭秘</a></li>
+                        <li><a href="#cases">案例分析</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>理性资源</h4>
+                    <ul>
+                        <li><a href="#">环境心理学入门</a></li>
+                        <li><a href="#">传统建筑常识</a></li>
+                        <li><a href="#">批判思维阅读</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>免责提示</h4>
+                    <ul>
+                        <li>本站内容仅供文化研究与参考</li>
+                        <li>不构成任何决策依据</li>
+                        <li>请理性看待传统方术</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2024 狡猾的风水相师 专题站 · 保持清醒，尊重传统，但不过度沉迷。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('navToggle').addEventListener('click', function() {
+            var nav = document.getElementById('mainNav');
+            nav.classList.toggle('open');
+        });
+    </script>
+</body>
+              </html>
