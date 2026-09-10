@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神秘游戏-解谜冒险游戏大全与深度探索指南</title>
+    <meta name="description" content="神秘游戏专题站，收录心理悬疑、密室逃脱、克苏鲁风、剧情解谜等各类神秘风格游戏，提供游戏推荐、玩法解析、评测与探索指南。">
+    <meta name="keywords" content="神秘游戏,解谜游戏,悬疑游戏,密室逃脱,克苏鲁游戏,心理恐怖,剧情向游戏,神秘游戏推荐">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Arial, sans-serif;
+            background: #0b0e14;
+            color: #d4d8e0;
+            line-height: 1.7;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, #10131c 0%, #1a1f2e 100%);
+            border-bottom: 1px solid #2a3142;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(6px);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #c9a86a, #e6d5a8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 12px rgba(201, 168, 106, 0.2);
+        }
+        .logo span {
+            font-size: 20px;
+            margin-left: 6px;
+            background: none;
+            -webkit-text-fill-color: #5f6a7a;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 28px;
+        }
+        .main-nav a {
+            font-size: 15px;
+            color: #9aa4b2;
+            transition: color 0.3s;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .main-nav a:hover {
+            color: #d4b978;
+            border-bottom-color: #d4b978;
+        }
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: 1px solid #3a4255;
+            color: #c9d0dc;
+            font-size: 18px;
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        /* Hero */
+        .hero {
+            background: radial-gradient(ellipse at 20% 20%, #1c2333 0%, #0b0e14 70%);
+            padding: 70px 0 60px;
+            border-bottom: 1px solid #1e2533;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 168, 106, 0.12);
+            border: 1px solid rgba(201, 168, 106, 0.3);
+            color: #c9a86a;
+            font-size: 13px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            color: #ede6d6;
+        }
+        .hero h1 .accent {
+            color: #c9a86a;
+        }
+        .hero p {
+            font-size: 16px;
+            color: #8f99a8;
+            max-width: 520px;
+            margin-bottom: 28px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 36px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-num {
+            font-size: 28px;
+            font-weight: 700;
+            color: #d4b978;
+        }
+        .stat-label {
+            font-size: 13px;
+            color: #6b7686;
+            margin-top: 2px;
+        }
+        .hero-visual {
+            background: #141a26;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #252d3f;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            min-height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-visual::before {
+            content: "";
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(201, 168, 106, 0.15), transparent 70%);
+            border-radius: 50%;
+        }
+        .visual-symbol {
+            text-align: center;
+            z-index: 1;
+        }
+        .visual-symbol .icon {
+            font-size: 64px;
+            display: block;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 0 12px rgba(201, 168, 106, 0.4));
+        }
+        .visual-symbol p {
+            font-size: 15px;
+            color: #7c8798;
+            letter-spacing: 2px;
+        }
+        /* Section */
+        .section {
+            padding: 60px 0;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 34px;
+            border-bottom: 1px solid #222a3a;
+            padding-bottom: 16px;
+        }
+        .section-title {
+            font-size: 26px;
+            font-weight: 600;
+            color: #e4dfd3;
+        }
+        .section-title small {
+            font-size: 15px;
+            font-weight: 400;
+            color: #687386;
+            margin-left: 12px;
+        }
+        .section-link {
+            font-size: 14px;
+            color: #8b96a8;
+            transition: color 0.3s;
+        }
+        .section-link:hover {
+            color: #d4b978;
+        }
+        /* Cards - Game Categories */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .cat-card {
+            background: #121824;
+            border: 1px solid #1f2838;
+            border-radius: 10px;
+            padding: 24px 20px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .cat-card:hover {
+            border-color: #c9a86a;
+            transform: translateY(-4px);
+            background: #161d2c;
+        }
+        .cat-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .cat-card h3 {
+            font-size: 18px;
+            color: #e0dccf;
+            margin-bottom: 8px;
+        }
+        .cat-card p {
+            font-size: 13px;
+            color: #77828f;
+            line-height: 1.6;
+        }
+        /* Featured Games */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .game-card {
+            background: linear-gradient(145deg, #121824, #0f141f);
+            border: 1px solid #1e2735;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .game-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(201, 168, 106, 0.2);
+        }
+        .game-cover {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 12px;
+        }
+        .game-tag {
+            background: rgba(201, 168, 106, 0.9);
+            color: #111;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+        .game-tag.dark {
+            background: rgba(20, 24, 36, 0.8);
+            color: #d4b978;
+            border: 1px solid #c9a86a;
+        }
+        .game-info {
+            padding: 16px 18px 20px;
+        }
+        .game-info h3 {
+            font-size: 18px;
+            color: #e8e2d5;
+            margin-bottom: 6px;
+        }
+        .game-meta {
+            font-size: 13px;
+            color: #6f7a8a;
+            margin-bottom: 10px;
+        }
+        .game-desc {
+            font-size: 14px;
+            color: #9aa3b0;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        /* Two Column */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1.4fr 0.6fr;
+            gap: 30px;
+        }
+        .list-block {
+            background: #121824;
+            border-radius: 10px;
+            border: 1px solid #1e2735;
+            padding: 22px 24px;
+        }
+        .list-block h3 {
+            color: #d4b978;
+            font-size: 17px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .trend-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #222c3d;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .trend-list li:last-child {
+            border-bottom: none;
+        }
+        .rank {
+            width: 28px;
+            height: 28px;
+            background: #1a2233;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #c9a86a;
+            flex-shrink: 0;
+        }
+        .trend-info {
+            flex: 1;
+        }
+        .trend-info .name {
+            font-size: 15px;
+            color: #d8d4c8;
+        }
+        .trend-info .sub {
+            font-size: 12px;
+            color: #677386;
+        }
+        .hot-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .tag {
+            background: #1a2233;
+            border-radius: 16px;
+            padding: 4px 14px;
+            font-size: 13px;
+            color: #9aa8b8;
+            border: 1px solid #2a3344;
+            transition: all 0.2s;
+        }
+        .tag:hover {
+            border-color: #c9a86a;
+            color: #d4b978;
+        }
+        /* Guide */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .guide-item {
+            background: #111722;
+            padding: 26px 24px;
+            border-radius: 10px;
+            border-left: 3px solid #c9a86a;
+        }
+        .guide-item .step {
+            font-size: 13px;
+            color: #c9a86a;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .guide-item h3 {
+            font-size: 18px;
+            color: #ddd8cb;
+            margin-bottom: 10px;
+        }
+        .guide-item p {
+            font-size: 14px;
+            color: #8a94a4;
+        }
+        /* FAQ */
+        .faq-list {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #121824;
+            border: 1px solid #1f2838;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+        }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 600;
+            color: #d8d2c4;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-q::before {
+            content: "?";
+            width: 24px;
+            height: 24px;
+            background: #c9a86a;
+            color: #111;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .faq-a {
+            font-size: 15px;
+            color: #939eae;
+            padding-left: 34px;
+        }
+        /* CTA */
+        .cta-banner {
+            background: linear-gradient(120deg, #1a2130, #222b3e);
+            border: 1px solid #2b3448;
+            border-radius: 14px;
+            padding: 40px 40px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-banner h2 {
+            font-size: 26px;
+            color: #e5dfd2;
+            margin-bottom: 12px;
+        }
+        .cta-banner p {
+            color: #8a96a6;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: #c9a86a;
+            color: #0b0e14;
+            padding: 10px 28px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #d8ba7e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 168, 106, 0.3);
+        }
+        /* Footer */
+        .site-footer {
+            background: #0a0d13;
+            border-top: 1px solid #1c2330;
+            padding: 40px 0 30px;
+            margin-top: 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-about h3 {
+            color: #c9a86a;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        .footer-about p {
+            font-size: 14px;
+            color: #6d7888;
+            line-height: 1.7;
+        }
+        .footer-links h4 {
+            color: #a8b0bd;
+            font-size: 15px;
+            margin-bottom: 14px;
+        }
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
+            font-size: 14px;
+            color: #6d7888;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: #c9a86a;
+        }
+        .copyright {
+            text-align: center;
+            font-size: 13px;
+            color: #4c5563;
+            border-top: 1px solid #1a2130;
+            padding-top: 20px;
+        }
+        /* Responsive */
+        @media (max-width: 992px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .guide-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #111722;
+                flex-direction: column;
+                padding: 20px;
+                border-bottom: 1px solid #2a3142;
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .main-nav ul {
+                flex-direction: column;
+                gap: 14px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .category-grid,
+            .games-grid,
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .section {
+                padding: 40px 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 14px;
+            }
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 18px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">神秘游戏<span>探索未知领域</span></div>
+            <button class="nav-toggle" id="navToggle">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">游戏库</a></li>
+                    <li><a href="#">评测</a></li>
+                    <li><a href="#">攻略</a></li>
+                    <li><a href="#">论坛</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <span class="hero-badge">✦ 神秘游戏专题站</span>
+                    <h1>揭开<span class="accent">神秘游戏</span>的<br>真相与深邃魅力</h1>
+                    <p>从心理悬疑到克苏鲁神话，从密室逃脱到超自然现象。这里是神秘游戏爱好者的聚集地，为你挖掘值得沉浸的暗黑叙事与烧脑谜题。</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-num">500+</div>
+                            <div class="stat-label">收录游戏</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">120+</div>
+                            <div class="stat-label">深度评测</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">30+</div>
+                            <div class="stat-label">专题攻略</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-symbol">
+                        <span class="icon">🔮</span>
+                        <p>—— 进入迷雾 ——</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 游戏分类 -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">神秘游戏分类<small>寻找你的暗黑入口</small></h2>
+                    <a href="#" class="section-link">全部分类 →</a>
+                </div>
+                <div class="category-grid">
+                    <div class="cat-card">
+                        <span class="cat-icon">🧩</span>
+                        <h3>心理悬疑</h3>
+                        <p>聚焦人性阴暗与心理博弈，在层层反转中挑战你对现实的认知边界。</p>
+                    </div>
+                    <div class="cat-card">
+                        <span class="cat-icon">🗝️</span>
+                        <h3>密室逃脱</h3>
+                        <p>在封闭空间中寻找线索，破解机关，体验步步紧逼的逃生紧张感。</p>
+                    </div>
+                    <div class="cat-card">
+                        <span class="cat-icon">🌌</span>
+                        <h3>克苏鲁风</h3>
+                        <p>不可名状的恐惧与远古邪神，在理智与疯狂的边缘探索未知领域。</p>
+                    </div>
+                    <div class="cat-card">
+                        <span class="cat-icon">👁️</span>
+                        <h3>超自然现象</h3>
+                        <p>灵异事件、都市传说与超自然力量，打破科学与常识的束缚。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门游戏推荐 -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">热门神秘游戏<small>编辑精选</small></h2>
+                    <a href="#" class="section-link">浏览全部 →</a>
+                </div>
+                <div class="games-grid">
+                    <article class="game-card">
+                        <div class="game-cover" style="background: linear-gradient(135deg, #2a1f3d, #0d0d1a);">
+                            <span class="game-tag">心理悬疑</span>
+                        </div>
+                        <div class="game-info">
+                            <h3>迷雾回廊</h3>
+                            <div class="game-meta">✦ 9.2 · 心理恐怖 · 单人</div>
+                            <p class="game-desc">在一座废弃的精神病院中醒来，你失去了所有记忆。调查每一个房间，收集破碎的日记，逐渐拼凑出令人不安的真相。每个选择都会影响结局走向。</p>
+                        </div>
+                    </article>
+                    <article class="game-card">
+                        <div class="game-cover" style="background: linear-gradient(135deg, #1a3a2a, #0a1a12);">
+                            <span class="game-tag dark">克苏鲁</span>
+                        </div>
+                        <div class="game-info">
+                            <h3>深渊低语</h3>
+                            <div class="game-meta">✦ 8.8 · 克苏鲁 · 开放世界</div>
+                            <p class="game-desc">海边小镇不断发生离奇失踪事件。调查中你发现海底藏着远古神祇的遗迹，而你的理智正在一点点被侵蚀。保持清醒，或拥抱疯狂。</p>
+                        </div>
+                    </article>
+                    <article class="game-card">
+                        <div class="game-cover" style="background: linear-gradient(135deg, #3d2a1a, #1a0d0a);">
+                            <span class="game-tag">密室逃脱</span>
+                        </div>
+                        <div class="game-info">
+                            <h3>第七封印</h3>
+                            <div class="game-meta">✦ 9.0 · 解谜 · 多人合作</div>
+                            <p class="game-desc">七间被诅咒的房间，每一间都藏着致命的秘密。与队友协作，在时间耗尽前解开古老的封印。小心，有些门背后通往未知的深渊。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 榜单与热门话题 -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container two-col">
+                <div class="list-block">
+                    <h3>🔥 本周热度榜</h3>
+                    <ul class="trend-list">
+                        <li>
+                            <span class="rank">1</span>
+                            <div class="trend-info">
+                                <div class="name">《寂静之屋》</div>
+                                <div class="sub">心理恐怖 · 9.4分</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank">2</span>
+                            <div class="trend-info">
+                                <div class="name">《星之低语者》</div>
+                                <div class="sub">克苏鲁 · 8.9分</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank">3</span>
+                            <div class="trend-info">
+                                <div class="name">《时间囚笼》</div>
+                                <div class="sub">解谜 · 9.1分</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank">4</span>
+                            <div class="trend-info">
+                                <div class="name">《血月庄园》</div>
+                                <div class="sub">超自然 · 8.7分</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank">5</span>
+                            <div class="trend-info">
+                                <div class="name">《记忆碎片》</div>
+                                <div class="sub">心理悬疑 · 9.0分</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block">
+                    <h3>🏷️ 热门标签</h3>
+                    <div class="hot-tags">
+                        <a href="#" class="tag"># 心理恐怖</a>
+                        <a href="#" class="tag"># 洛氏恐怖</a>
+                        <a href="#" class="tag"># 多重结局</a>
+                        <a href="#" class="tag"># 烧脑谜题</a>
+                        <a href="#" class="tag"># 氛围沉浸</a>
+                        <a href="#" class="tag"># 复古像素</a>
+                        <a href="#" class="tag"># 第一人称</a>
+                        <a href="#" class="tag"># 非线性叙事</a>
+                        <a href="#" class="tag"># 超自然</a>
+                        <a href="#" class="tag"># 密室解谜</a>
+                    </div>
+                    <h3 style="margin-top: 28px;">📌 编辑推荐</h3>
+                    <ul class="trend-list">
+                        <li>
+                            <div class="trend-info">
+                                <div class="name">新手入坑指南</div>
+                                <div class="sub">从轻度悬疑开始，逐步深入</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="trend-info">
+                                <div class="name">克苏鲁入门书单</div>
+                                <div class="sub">先读这些再玩游戏更沉浸</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 探索指南 -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">神秘游戏探索指南<small>如何选择适合你的那一款</small></h2>
+                </div>
+                <div class="guide-grid">
+                    <div class="guide-item">
+                        <div class="step">Step 01</div>
+                        <h3>明确你的恐惧阈值</h3>
+                        <p>神秘游戏包含从轻度悬疑到重度恐怖的不同层次。如果你希望体验谜题但不想承受过多惊吓，可以从心理悬疑类入手；若追求极致刺激，超自然与克苏鲁题材更能满足需求。</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="step">Step 02</div>
+                        <h3>关注叙事与玩法比重</h3>
+                        <p>有些神秘游戏以剧情为核心，你只需跟随线索逐步探索；另一些则侧重高难度谜题和机制设计。选择前可以先了解游戏的核心玩法占比，避免出现预期落差。</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="step">Step 03</div>
+                        <h3>善用社区评测与实况</h3>
+                        <p>在决定入手前，可以参考玩家社区的讨论和实况视频，了解游戏的实际氛围与质量。但注意减少剧透，保持第一次体验的新鲜感。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container">
+            <div class="cta-banner">
+                <h2>准备好踏入迷雾了吗？</h2>
+                <p>加入神秘游戏爱好者社区，分享你的探索经历，发现更多隐藏在黑暗中的杰作。</p>
+                <a href="#" class="btn">立即探索</a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题<small>关于神秘游戏的疑问解答</small></h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-q">神秘游戏和恐怖游戏是同一个概念吗？</div>
+                        <div class="faq-a">不完全是。神秘游戏更强调悬疑氛围、未知探索和谜题设计，恐怖元素只是其中一种表现手段。许多神秘游戏并不以吓人为目的，而是通过氛围和叙事营造紧张感。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">我胆子小，适合玩神秘游戏吗？</div>
+                        <div class="faq-a">完全可以。神秘游戏类型十分宽泛，你可以从叙事向、解谜向作品入手，这些游戏通常没有突然惊吓（Jump Scare），更注重剧情沉浸。建议查看游戏标签和玩家评价来筛选。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">哪些平台可以玩到神秘游戏？</div>
+                        <div class="faq-a">主流神秘游戏通常登录PC（Steam、Epic等）、PlayStation、Xbox和Nintendo Switch。部分独立作品也支持手机端。建议根据游戏的具体发布信息来选择平台。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">如何判断一款神秘游戏是否适合自己？</div>
+                        <div class="faq-a">可以从三个维度考量：题材偏好（古风、科幻、现代）、玩法侧重（解谜、探索、战斗）、以及心理承受能力。此外，观看无剧透的前期实况也是有效的方法。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>神秘游戏</h3>
+                    <p>专注神秘风格游戏的资讯与探索平台。我们致力于挖掘具有独特氛围、深邃叙事和精巧谜题的游戏作品，为玩家提供可靠的参考与社区交流空间。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">最新收录</a></li>
+                        <li><a href="#">高分榜单</a></li>
+                        <li><a href="#">专题策划</a></li>
+                        <li><a href="#">游戏评测</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>社区资源</h4>
+                    <ul>
+                        <li><a href="#">玩家论坛</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 神秘游戏 MysteryGames. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            var nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+                                  </html>
